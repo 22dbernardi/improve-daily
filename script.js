@@ -64,7 +64,7 @@ function logWeight() {
     indexedDates.sort((a, b) => a.date - b.date);
 console.log(indexedDates);
     let orderedDates = indexedDates.map(
-        ({date}) => date.toLocaleDateString()
+        ({date}) => date.toLocaleDateString("en-US")
     );
     let datesOGOrderIndex = indexedDates.map(
         ({index}) => index
