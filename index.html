@@ -5,45 +5,31 @@
         <title>Self-improvement</title>
         <link rel="stylesheet" href="styles.css">
         <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
         <header>
-            <h1>Prototype</h1>
+            <h1>Weight tracker</h1>
         </header>
         <main>
             <section>
-                <h2>Calories</h2>
-                <h3>Today's calories</h3>
-                <p><strong>Chicken</strong> 100g 165cal 31gP 3,6gF (1gSF) 0gH (0gSH)</p>
-                <label for="foodName">Food:</label>
-                <input type="text" id="foodName">
-                <label for="amount">Amount:</label>
-                <input type="number" id="amount">
-                <label for="calories">Calories:</label>
-                <input type="number" id="calories">
-                <label for="Protein:"></label>
-                <input type="number" id="protein">
-                <label for="Fat"></label>
-                <input type="number" id="fat">
-                <label for="satFat"></label>
-                <input type="number" id="satFat">
-                <label for="carbs"></label>
-                <input type="number" id="carbs">
-                <label for="sugarCarbs"></label>
-                <input type="number" id="sugarCarbs">
-                <button onclick="addNew()">+ Add new</button>
-                <button onclick="resetChart()">Reset chart</button>
-                <button onclick="updateValues()">Log 2/23-4/16</button>
-                <div id="printNF"></div>
-            </section>
-            <section>
-                <h2>Weight track</h2>
+                <h2>Log weight:</h2>
                 <input type="number" id="weight">
                 <input type="date" id="date">
                 <button onclick="logWeight()">Log weight</button>
+                <button onclick="resetChart()">Reset chart</button>
+                <button onclick="updateValues()">Log 2/23-4/16</button>
             </section>
         </main>
-        <canvas id="myChart"></canvas>
+        <div id="weightChartDiv">
+            <canvas 
+                id="weightChart" 
+                aria-label="Weight chart" 
+                role="img"
+                style="display:flex"
+            >
+            </canvas>
+        </div>
         <script src="script.js"></script>
     </body>
 </html>

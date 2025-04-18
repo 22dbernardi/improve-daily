@@ -18,7 +18,7 @@ function addNew() {
     }
 }
 
-let myChart;
+let weightChart;
 let dateArray;
 let orderedDates = JSON.parse(localStorage.getItem("SorderedDates"));
 let orderedWeights = JSON.parse(localStorage.getItem("SorderedWeights"));
@@ -33,11 +33,11 @@ if (orderedDates && orderedWeights) {
 }
 
 function createChart() {
-    if (myChart) {
-        myChart.destroy();
+    if (weightChart) {
+        weightChart.destroy();
     } else {
-        const ctx = document.getElementById('myChart').getContext('2d');
-        myChart = new Chart(ctx, {
+        const ctx = document.getElementById('weightChart').getContext('2d');
+        weightChart = new Chart(ctx, {
             type: 'line',
             data: {
                 labels: orderedDates,
@@ -48,6 +48,7 @@ function createChart() {
             },
             options: {
                 responsive: true,
+                maintainAspectRatio: false,
             }
         })
     }
@@ -75,9 +76,9 @@ console.log(indexedDates);
 console.log(orderedWeights); 
     localStorage.setItem("SorderedDates", JSON.stringify(orderedDates));
     localStorage.setItem("SorderedWeights", JSON.stringify(orderedWeights));
-    myChart.data.labels = orderedDates;
-    myChart.data.datasets[0].data = orderedWeights;
-    myChart.update();
+    weightChart.data.labels = orderedDates;
+    weightChart.data.datasets[0].data = orderedWeights;
+    weightChart.update();
 }
 
 function resetChart() {

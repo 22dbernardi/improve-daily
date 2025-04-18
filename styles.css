@@ -1,4 +1,4 @@
-#myChart {
-    max-width: 600px;
-    max-height: 200px;
+#weightChartDiv {
+    width: 95vw;
+    height: 50vh;
 }
