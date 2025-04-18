@@ -18,18 +18,19 @@
                 <input type="date" id="date">
                 <button onclick="logWeight()">Log weight</button>
                 <button onclick="resetChart()">Reset chart</button>
-                <button onclick="updateValues()">Log 2/23-4/16</button>
+                <div id="weightChartDiv">
+                    <canvas 
+                        id="weightChart" 
+                        aria-label="Weight chart" 
+                        role="img"
+                        style="display:flex"
+                    >
+                    </canvas>
+                </div>
+                <button onclick="defView()">Default view</button>
+                <button onclick="monthView()">Last month view</button>
             </section>
         </main>
-        <div id="weightChartDiv">
-            <canvas 
-                id="weightChart" 
-                aria-label="Weight chart" 
-                role="img"
-                style="display:flex"
-            >
-            </canvas>
-        </div>
         <script src="script.js"></script>
     </body>
 </html>
