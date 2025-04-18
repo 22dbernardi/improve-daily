@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Calories</title>
+        <link rel="stylesheet" href="styles.css">
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <header>
+            <h1>Calorie tracker</h1>
+        </header>
+        <main>
+            <section>
+                <h2>Calories</h2>
+                <h3>Today's calories</h3>
+                <p><strong>Chicken</strong> 100g 165cal 31gP 3,6gF (1gSF) 0gH (0gSH)</p>
+                <label for="foodName">Food:</label>
+                <input type="text" id="foodName">
+                <label for="amount">Amount:</label>
+                <input type="number" id="amount">
+                <label for="calories">Calories:</label>
+                <input type="number" id="calories">
+                <label for="Protein:"></label>
+                <input type="number" id="protein">
+                <label for="Fat"></label>
+                <input type="number" id="fat">
+                <label for="satFat"></label>
+                <input type="number" id="satFat">
+                <label for="carbs"></label>
+                <input type="number" id="carbs">
+                <label for="sugarCarbs"></label>
+                <input type="number" id="sugarCarbs">
+                <button onclick="addNew()">+ Add new</button>
+                <div id="printNF"></div>
+            </section>
+        </main>
+        <script src="script.js"></script>
+    </body>
+</html>
