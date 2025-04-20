@@ -1,0 +1,70 @@
+<!-- make table with inputs & make them deletable one by one -->
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Self-improvement</title>
+        <link rel="stylesheet" href="styles.css">
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <header>
+            <div class="topBar">
+                <div><p><strong>Home</strong></p></div>
+                <div style="justify-self: end;"><i class="material-icons">menu</i></div>
+            </div>
+        </header>
+        <main>
+            <section>
+                <p style="text-align: center; color: #525252; margin-bottom: 5px;">Welcome to the</p>
+                <p class="pageTitles">WEIGHT LOGGER</p>
+                <div id="weightInputCard">
+                    <div>
+                        <label for="weight">Add</label>
+                        <input type="number" id="weight">
+                    </div>
+                    <div>
+                        <label for="date">Date</label>
+                        <input type="date" id="date">
+                    </div>
+                </div>
+                <div>
+                    <button onclick="logWeight()" id="logWeight">LOG WEIGHT</button>
+                </div>
+                <div id="weightChartDiv">
+                    <canvas 
+                        id="weightChart" 
+                        aria-label="Weight chart" 
+                        role="img"
+                        style="display:flex"
+                    >
+                    </canvas>
+                </div>
+                <div id="weightSettingsCard">
+                    <button onclick="defView()" class="weightSettingsItems">Default view (full data)</button>
+                    <button onclick="monthView()" class="weightSettingsItems">Last month view (last 90 days)</button>
+                </div>
+            </section>
+            <section>
+                <h2>Manage your inputs</h2>
+                <div>
+                    <button onclick="resetChart()" id="resetChart">RESET CHART <br> (Delete all inputs)</button> 
+                </div>
+                <div id="tableTitle">
+                    <p style="margin: 6px 0 6px 0;">WEIGHTS INPUTS</p>
+                </div>
+                <div id="tableCard">
+                </div>
+            </section>
+            <button onclick="add223to420()" style="margin-top: 30px">Add from 2/23 to 4/20</button>
+        </main>
+        <script src="script.js"></script>
+    </body>
+</html>

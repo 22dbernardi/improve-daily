@@ -1,3 +1,7 @@
+<!-- Make pretty sections for each link to page -->
+<!-- set motivational random phrases on top of the link pages -->
+<!-- Add functionality to topbar buttons (home & menu) -->
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -6,29 +10,35 @@
         <link rel="stylesheet" href="styles.css">
         <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     </head>
     <body>
         <header>
-            <h1>Weight tracker</h1>
+            <div class="topBar">
+                <div><p><strong>Home</strong></p></div>
+                <div style="justify-self: end;"><i class="material-icons">menu</i></div>
+            </div>
         </header>
         <main>
             <section>
-                <h2>Log weight:</h2>
-                <input type="number" id="weight">
-                <input type="date" id="date">
-                <button onclick="logWeight()">Log weight</button>
-                <button onclick="resetChart()">Reset chart</button>
-                <div id="weightChartDiv">
-                    <canvas 
-                        id="weightChart" 
-                        aria-label="Weight chart" 
-                        role="img"
-                        style="display:flex"
-                    >
-                    </canvas>
-                </div>
-                <button onclick="defView()">Default view</button>
-                <button onclick="monthView()">Last month view</button>
+                <h1>Improve <i>daily</i></h1>
+                <h2>Achieve goals, track habits, count calories, see results, and more!</h2>
+            </section>
+            <section>
+                <h3></h3>
+                <a href="habits.html">Explore habit tracker</a>
+            </section>
+            <section>
+                <h3></h3>
+                <a href="calories.html">Try out calorie counter</a>
+            </section>
+            <section>
+                <h3></h3>
+                <a href="weight.html">Look into the weight logger</a>
             </section>
         </main>
         <script src="script.js"></script>

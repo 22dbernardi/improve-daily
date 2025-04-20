@@ -1,4 +1,175 @@
+body {
+    font-family: 'Inter', sans-serif;
+    font-size: small;
+    padding: 1vw 5vw 5vw 5vw;
+}
+h1 {
+    font-weight: bolder;
+    font-size: 5em;
+    line-height: 1;
+    margin: 5vw 4vw 0 0;
+}
+h2 {
+    font-weight: bold;
+    font-size: 1.8em;
+    line-height: 1;
+    margin: 5vw 0 2vw 0;
+}
+input {
+    font-family: 'Inter', sans-serif;
+    font-size: small;
+}
+button {
+    font-family: 'Inter', sans-serif;
+    font-size: small;
+}
+.icon {
+    color: black;
+}
+.topBar {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1.5px solid rgba(160, 160, 160, 0.2);
+}
+.pageTitles {
+    font-family: 'Inter Tight', sans-serif;
+    font-weight: bold;
+    font-size: 2em;
+    text-align: center; 
+    margin-top: 0;
+}
 #weightChartDiv {
-    width: 95vw;
+    width: 90vw;
     height: 50vh;
+}
+#weight {
+    width: 6vw;
+    height: 20px;
+    padding: 0 3vw;
+    border: 2px solid rgba(160, 160, 160, 0.2);
+    border-radius: 5px;
+    box-shadow: 0 2px 2px rgba(160, 160, 160, 0.2);
+    appearance: textfield;
+}
+#weight::-webkit-outer-spin-button,
+#weight::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+#weight {
+    appearance: textfield;
+    -moz-appearance: textfield;
+}
+#date {
+    width: 32vw;
+    height: 20px;
+    padding: 0 3vw;
+    border: 2px solid rgba(160, 160, 160, 0.2);
+    border-radius: 5px;
+    box-shadow: 0 2px 2px rgba(160, 160, 160, 0.2);
+    appearance: textfield;
+}
+#date::-webkit-outer-spin-button,
+#date::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+#date {
+    appearance: textfield;
+    -moz-appearance: textfield;
+}
+#weightInputCard {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    box-shadow: 0 2px 15px rgba(160, 160, 160, 0.2);
+    border: 2px solid rgba(160, 160, 160, 0.2);
+    border-radius: 10px 10px 0 0;
+    padding: 5vw;
+}
+#logWeight {
+    font-family: 'Inter Tight', sans-serif;
+    width: 100%;
+    height: 5vh;
+    padding: 0 3vw;
+    font-weight: bolder;
+    color: rgb(53, 138, 250);
+    background-color: rgba(55, 142, 255, 0.3);
+    border: 2px solid rgb(145, 193, 255);
+    border-radius: 0 0 10px 10px;
+    box-shadow: 0 2px 2px rgba(160, 160, 160, 0.2);
+    margin-bottom: 5px;
+    transition: 0.25s;
+}
+#logWeight:hover {
+    background-color: rgb(103, 166, 248);
+    color: white;
+}
+#weightSettingsCard {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-top: 15px;
+}
+.weightSettingsItems {
+    width: 100%;
+    padding: 3vw 0 3vw 0;
+    background-color: white;
+    border: 2px solid rgba(160, 160, 160, 0.2);
+    border-radius: 10px;
+    box-shadow: 0 2px 2px rgba(160, 160, 160, 0.2);
+    margin-bottom: 10px;
+    transition: 0.25s;
+}
+.weightSettingsItems:hover {
+    background-color: rgba(160, 160, 160, 0.2);
+}
+#resetChart {
+    font-family: 'Inter Tight', sans-serif;
+    width: 100%;
+    height: 10vw;
+    padding: 0 3vw;
+    font-weight: bolder;
+    color: rgb(210, 0, 0);
+    background-color: rgba(255, 55, 55, 0.5);
+    border: 2px solid rgb(210, 0, 0);
+    border-radius: 10px;
+    box-shadow: 0 2px 2px rgba(160, 160, 160, 0.2);
+    margin-bottom: 10px;
+    transition: 0.25s;
+} 
+#resetChart:hover {
+    background-color: rgb(240, 71, 71);
+    color: white;
+}
+#resetChart:disabled {
+    opacity: 0.3;
+}
+#resetChart:disabled:hover {
+    background-color: rgba(255, 55, 55, 0.5);
+    color: rgb(210, 0, 0);
+    opacity: 0.3;
+}
+#tableTitle {
+    background-color: rgba(160, 160, 160, 0.2);
+    box-shadow: 0 2px 15px rgba(160, 160, 160, 0.2);
+    border: 2px solid rgba(160, 160, 160, 0.2);
+    border-radius: 10px 10px 0 0;
+    padding: 0 2vw 0 2vw;
+    text-align: center;
+    font-family: 'Inter Tight', sans-serif;
+    font-weight: bold;
+}
+#tableCard {
+    box-shadow: 0 2px 15px rgba(160, 160, 160, 0.2);
+    border: 2px solid rgba(160, 160, 160, 0.2);
+    border-radius: 0 0 10px 10px;
+}
+#tableRow {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2vw 0 2vw;
 }
