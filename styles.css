@@ -42,7 +42,7 @@ button {
 }
 #weightChartDiv {
     width: 90vw;
-    height: 50vh;
+    height: 50vw;
 }
 #weight {
     width: 6vw;
@@ -91,7 +91,7 @@ button {
 #logWeight {
     font-family: 'Inter Tight', sans-serif;
     width: 100%;
-    height: 5vh;
+    height: 5vw;
     padding: 0 3vw;
     font-weight: bolder;
     color: rgb(53, 138, 250);
