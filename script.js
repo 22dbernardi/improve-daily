@@ -17,7 +17,6 @@ function addNew() {
         alert("Error");
     }
 }
-
 let weightChart;
 let dateArray;
 let orderedDates = JSON.parse(localStorage.getItem("SorderedDates"));
@@ -33,7 +32,6 @@ if (orderedDates && orderedWeights) {
     orderedDates = [];
     orderedWeights = [];
 }
-
 function createChart() {
     if (weightChart) {
         weightChart.destroy();
@@ -58,14 +56,11 @@ function createChart() {
 }
 
 function logWeight() {
-    // Get new log inputs and adding them to the arrays
     weight = document.getElementById("weight").value
     date = document.getElementById("date").value
     weightArray.push(weight);
     let pushableDate = new Date(date).toLocaleDateString("en-US");
     dateArray.push(pushableDate);
-
-    // Creating new sorted arrays
     let indexedDates = dateArray.map(
         (dateStr, index) => ({date: new Date(dateStr), index})
     );
@@ -79,8 +74,6 @@ function logWeight() {
     let orderedWeightsNN = datesOGOrderIndex.map(
         index => weightArray[index]
     );
-
-    // Fill the blank values
     highestDate = new Date(orderedDatesNN[orderedDatesNN.length-1])
     lowestDate = new Date(orderedDatesNN[0])
     let dateDiff = ((highestDate - lowestDate)/86400000+1);
@@ -115,10 +108,11 @@ function logWeight() {
     weightTable();
     stateResetChart();
 }
-
 function resetChart() {
     localStorage.removeItem("SorderedDates");
     localStorage.removeItem("SorderedWeights");
+    weightArray = [];
+    dateArray = [];
     orderedDates = [];
     orderedWeights = [];
     weightChart.data.labels = [];
@@ -136,7 +130,6 @@ function stateResetChart() {
         resetChartButton.disabled = false;
     }
 }
-
 function defView() {
     weightChart.data.labels = orderedDates;
     weightChart.data.datasets[0].data = orderedWeights;
@@ -165,30 +158,70 @@ function weightTable() {
     } else {
         weightData = 0;
     }
-    const newDiv = document.createElement("div");
-    const newP = document.createElement("p");
-    const newDiv2 = document.createElement("div2");
-    const newI = document.createElement("i");
     const parent = document.querySelector("#tableCard");
-    newDiv.id = "tableRow";
     if (weightData == 1) {
-        newP.textContent = "There is weight data";
-        newI.textContent = "delete";
+        for (let i = 0; i < orderedDates.length; i++) {
+            while (parent.childElementCount > orderedDates.length-1) {
+                parent.removeChild(parent.firstElementChild);
+            }
+            const newDiv = document.createElement("div");
+            const newI = document.createElement("i");
+            const newP = document.createElement("p");
+            const newB = document.createElement("button");
+            newP.textContent = `${orderedWeights[i]} on day ${orderedDates[i]}`;
+            newI.textContent = "delete";
+            newI.className = "material-icons";
+            newI.style = "color: rgba(160, 160, 160, 0.395);";
+            newB.style = "justify-self: end; background: none; border: none; cursor: pointer;";
+            newB.onclick = function () {
+                if (orderedWeights.length == 1) {
+                    resetChart();
+                } else {
+                    if (i == 0) {
+                        const delW = orderedWeights.shift();
+                        const delD = orderedDates.shift();
+                        while (orderedWeights[0] == null) {
+                            const delW = orderedWeights.shift();
+                            const delD = orderedDates.shift();
+                        }
+                    } else if (i == orderedWeights.length-1) {
+                        const delW = orderedWeights.pop();
+                        const delD = orderedDates.pop();
+                        while (orderedWeights[orderedWeights.length-1] == null) {
+                            const delW = orderedWeights.shift();
+                            const delD = orderedDates.shift();
+                        }
+                    } else {
+                        orderedWeights[i] = null;
+                    }
+                }
+                weightArray = orderedWeights;
+                dateArray = orderedDates;
+                localStorage.setItem("SorderedWeights", JSON.stringify(orderedWeights));
+                localStorage.setItem("SorderedDates", JSON.stringify(orderedDates));
+                weightTable();
+                weightChart.update();
+            };
+            newDiv.id = "tableRow";
+            parent.appendChild(newDiv);
+            newDiv.appendChild(newP);
+            newDiv.appendChild(newB);
+            newB.appendChild(newI);
+        }
     } else {
+        const newDiv = document.createElement("div");
+        const newP = document.createElement("p");
+        newDiv.id = "tableRow";
         newP.textContent = "No data";
-        newI.textContent = "";
-    }
-    newDiv2.style = "justify-self: end;";
-    newI.className = "material-icons";
-    newI.style = "color: rgba(160, 160, 160, 0.395)";
-    parent.appendChild(newDiv);
-    newDiv.appendChild(newP);
-    newDiv.appendChild(newDiv2);
-    newDiv2.appendChild(newI);
-    if (parent.childElementCount > 1) {
-        parent.removeChild(parent.firstElementChild);
+        newDiv.appendChild(newP);
+        parent.appendChild(newDiv);
+        while (parent.childElementCount > 1) {
+            parent.removeChild(parent.firstElementChild);
+        }
     }
 }
+
+
 
 
 function add223to420() {
