@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Improve Daily - Habits</title>
+        <link rel="stylesheet" href="styles.css">
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <header>
+            <div class="topBar">
+                <div><p><strong>Home</strong></p></div>
+                <div style="justify-self: end;"><i class="material-icons">menu</i></div>
+            </div>
+        </header>
+        <main>
+            <section>
+                <p style="text-align: center; color: #525252; margin-bottom: 5px;">Welcome to the daily</p>
+                <p class="pageTitles">HABIT TRACKER</p>
+                <div id="tableTitle">
+                    <div id="tableHabits">
+                        <p style="margin: 6px 0 6px 0;">no habits set</p>
+                        <p style="margin: 6px 0 6px 0;">no habits set</p>
+                    </div>
+                </div>
+                <div id="tableCard">
+                    <div id="tableRow">
+                        <p>No habits to track</p>
+                    </div>
+                </div>
+                <div id="habitsAbove">
+                    <div id="habitsForm">
+                        <div>
+                            <label for="addHabit">Add habit</label>
+                            <input type="text" id="habitName">
+                        </div>
+                        <form>
+                            <p style="display: inline-block;">Relevance:&nbsp&nbsp&nbsp</p>
+                            <label for="habitRelevance1">1</label>
+                            <input type="radio" name="habitRelevance" id="habitRelevance1" value="1" checked>
+                            <label for="habitRelevance1">2</label>
+                            <input type="radio" name="habitRelevance" id="habitRelevance2" value="2">
+                            <label for="habitRelevance1">3</label>
+                            <input type="radio" name="habitRelevance" id="habitRelevance3" value="3">
+                        </form>
+                        <button onclick="addHabit()" id="addHabit">Add new habit</button>
+                    </div>
+                    <div id="habitsChartDiv">
+                        <canvas 
+                        id="habitsChart" 
+                        aria-label="Habits chart" 
+                        role="img"
+                        style="display:flex"
+                    >
+                    </div>
+                    <button onclick="deleteHabits()" id="deleteHabits">Reset habits</button>
+                </div>
+            </section>
+        </main>
+        <script src="habits.js"></script>
+    </body>
+</html>

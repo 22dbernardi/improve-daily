@@ -96,6 +96,14 @@ button {
     background-color: rgb(103, 166, 248);
     color: white;
 }
+#logWeight:disabled {
+    opacity: 0.3;
+}
+#logWeight:disabled:hover {
+    color: rgb(53, 138, 250);
+    background-color: rgba(55, 142, 255, 0.3);
+    opacity: 0.3;
+}
 #weightSettingsCard {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -166,4 +174,17 @@ button {
 }
 #tableRow:first-child {
     border-top: 2px dashed rgba(0, 0, 0, 0);
+}
+#tableHabits {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1vw 4vw 1vw 4vw;
+}
+#addHabit:disabled {
+    opacity: 0.2;
+}
+#addHabit:disabled:hover {
+    opacity: 0.2;
 }
